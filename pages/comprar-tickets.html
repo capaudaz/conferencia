@@ -12,6 +12,122 @@
 </head>
 
 <body>
+    <header class="navColor">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="../assets/images/codoacodo.png" alt="Logo de codo a codo" loading="lazy" width="120">
+                        <h4 class="text-white">Conf Bs As</h4>
+                    </div>   
+                </a>
+               
+                    <div class="d-flex justify-content-center">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="../index.html">La Conferencia</a></li>
+                            <li class="nav-item"> <a  class="nav-link text-secondary" href="./los_oradores.html">Los oradores</a></li>
+                            <li class="nav-item"> <a  class="nav-link text-secondary" href="./lugaryfecha.html">El lugar y la Fecha</a></li>
+                            <li class="nav-item"> <a  class="nav-link text-secondary" href="./contacto.html">Conviértete en Orador</a></li>
+                            <li class="nav-item"> <a  class="nav-link text-success" href="#">Comprar Tickets</a></li>
+                        </ul>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+      <div class="album py-4">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-3 g-2">
+            <div class="col">
+              <div class="card border-primary">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Estudiante</h5>
+                  <p class="card-text">Tienen descuento</p>
+                  <p class="card-text fw-bold">80%</p>
+                  <p class="card-text text-black-50">* Presentar documentación</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-info">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Trainee</h5>
+                  <p class="card-text">Tienen descuento</p>
+                  <p class="card-text fw-bold">50%</p>
+                  <p class="card-text text-black-50">* Presentar documentación</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card border-warning">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Junior</h5>
+                    <p class="card-text">Tienen descuento</p>
+                    <p class="card-text fw-bold">15%</p>
+                    <p class="card-text text-black-50">* Presentar documentación</p>
+                  </div>
+                </div>
+            </div>    
+          </div>
+        </div>
+      </div>
+
+      <div class="container text-center">
+        <p class="mt-0 mb-1">VENTA</p>
+        <p class="h2 mb-4">VALOR DE TICKET $200</p>
+
+        <form class="row g-3">
+          <div class="col-md-6">
+            
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+          </div>
+          <div class="col-md-6">
+            
+            <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+          </div>
+          <div class="col-12">
+            
+            <input type="email" class="form-control" id="email" placeholder="Correo">
+          </div>
+          
+          <div class="col-md-6 text-start">
+            <label>Cantidad</label>
+            <input type="number" class="form-control" id="cantidadTickets" placeholder="Cantidad">
+          </div>
+          <div class="col-md-6 text-start">
+            <label>Categoría</label>
+            <select name="categoria" id="categoria" class="form-select">
+              <option value="0" selected>Sin categoria</option>
+              <option value="1">Estudiante</option>
+              <option value="2">Trainee</option>
+              <option value="3">Junior</option>
+            </select>
+          </div>
+
+          <div class="col-md-12">
+
+            <div class="text-start fw-bold ml-2 mr-2 p-3 rounded bkgTotalPagar">
+              Total a Pagar: $ <span id="total"></span>
+            </div>
+            
+            
+            
+          </div>
+          
+          
+          <div class="col-md-6 d-grid gap-2">
+            <button type="button" class="btn btn-success btnTicket" id="btnBorrar">Borrar</button>
+          </div>
+          <div class="col-md-6 d-grid gap-2">
+            <button type="button" class="btn btn-success btnTicket" id="btnResumen">Resumen</button>
+          </div>
+
+        </form>
+      </div>
+    </main>
     
+    <script src="../js/comprar-tickets.js"></script>    
 </body>
 </html>
