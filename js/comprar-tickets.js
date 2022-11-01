@@ -10,22 +10,16 @@ let email = document.getElementById("email");
 let cantidadTickets = document.getElementById("cantidadTickets");
 let categoria = document.getElementById("categoria");
 
-
-function quitarClaseError() {
-    let formulario = document.querySelectorAll(".form-control, .form-select");
-    for (let i=0; i<formulario.length; i++){
-        formulario[i].classList.remove('is-invalid');
-    }
-}
-
 function reset_total_a_pagar() {
-    quitarClaseError();
     total.innerHTML = "";
+    nombre.value = "";
+    apellido.value = "";
+    email.value = "";
+    cantidadTickets.value = 0;
+    categoria.value = 0;
 }
 
 function calcular_total(){
-    // aca llamar funcion para reset de campos
-
     
     // Controles de campos
 
@@ -80,24 +74,25 @@ function calcular_total(){
     }
 
 
-
-
     // cálculos de pago
 
     let totalPagar = (cantidadTickets.value) * valorTicket;
 
-    if (categoria.value == 1){
-        totalPagar = totalPagar - (descuentoEstudiante / 100 * totalPagar);
-    }
-    if (categoria.value == 2){
-        totalPagar = totalPagar - (descuentoTrainee / 100 * totalPagar);
-    }
-    if (categoria.value == 3){
-        totalPagar = totalPagar - (descuentoJunior / 100 * totalPagar);
+    switch (categoria.value){
+        case "1":
+            totalPagar = totalPagar - (descuentoEstudiante / 100 * totalPagar);
+            break;
+        case "2":
+            totalPagar = totalPagar - (descuentoTrainee / 100 * totalPagar);
+            break;
+        case "3":
+            totalPagar = totalPagar - (descuentoJunior / 100 * totalPagar);
+            break;
+        default:
+            break;
     }
 
     total.innerHTML = totalPagar;
-
 
 }
 
